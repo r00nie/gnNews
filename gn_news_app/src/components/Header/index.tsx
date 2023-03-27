@@ -1,13 +1,25 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, Link } from '@material-ui/core';
-import { ViewList as ViewListIcon, ViewModule as ViewModuleIcon } from '@material-ui/icons';
+import React, {useState} from 'react';
+import { AppBar, Toolbar, Typography, Link, Button } from '@material-ui/core';
+import { ViewList as ViewListIcon, ViewModule as ViewModuleIcon, Info } from '@material-ui/icons';
 import { ToggleButton, ToggleButtonGroup } from '@material-ui/lab';
+import HeaderDialog from '../HeaderDialog';
 
 interface HeaderProps {
   title: string;
 }
 
 const Header: React.FC<HeaderProps> = ({ title }) => {
+
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   const handleChange = () => {
     // handle toggle button change
   };
@@ -26,6 +38,10 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
             <ViewModuleIcon />
           </ToggleButton>
         </ToggleButtonGroup>
+        <Button onClick={handleOpen}>
+          <Info/>
+        </Button>
+        <HeaderDialog isOpen={open} onClose={handleClose} />
       </Toolbar>
     </AppBar>
   );
