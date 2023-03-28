@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import Articles from './components/Articles';
+import Footer from './components/Footer';
 
 const articles = [
   {
@@ -87,6 +88,7 @@ const App: React.FC = () => {
     <div className="App">
       <Header title="GN News" />
       <Articles articles={articles} />
+      <Footer/>
     </div>
   );
 };
