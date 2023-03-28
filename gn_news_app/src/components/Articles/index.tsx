@@ -1,8 +1,10 @@
-    import React, { FC } from 'react';
+    import React, { FC} from 'react';
     import ArticlesList from '../ArticlesList';
     import ArticlesBlocks from '../ArticlesBlocks';
     import { AppState } from '../../reducers';
     import { useSelector } from 'react-redux';
+    
+   
     
     interface Article {
         source: {
@@ -24,6 +26,7 @@
     
     const Articles: FC<ArticlesProps> = ({ articles }) => {
         const toggleList = useSelector((state: AppState) => state.toggleList);
+        
         
         return (
             <>
