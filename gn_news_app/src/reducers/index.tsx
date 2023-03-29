@@ -1,4 +1,4 @@
-import { combineReducers, Reducer, Dispatch } from 'redux';
+import { combineReducers, Reducer, Dispatch, AnyAction } from 'redux';
 import axios from 'axios';
 
 export interface AppState {
@@ -49,7 +49,7 @@ const rootReducer: Reducer<AppState, AppAction> = combineReducers({
 });
 
 
-export const fetchArticles = () => async (dispatch: Dispatch<AppAction>) => {
+export const fetchArticles = () => async (dispatch: Dispatch<AnyAction>) => {
   const response = await axios.get("https://newsapi.org/v2/top-headlines?country=pl&apiKey=8c278600340c441b8ac520d96698a3d1");
   const articles = response.data.articles;
   dispatch({ type: "ADD_ARTICLES", payload: articles });

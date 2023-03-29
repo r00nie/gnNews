@@ -2,8 +2,8 @@ import React, {useEffect} from 'react';
 import Header from './components/Header';
 import Articles from './components/Articles';
 import { useDispatch, useSelector } from "react-redux";
-import { fetchArticles, AppState, AppAction } from "./reducers";
-import {Dispatch} from 'redux';
+import { fetchArticles, AppState, AppAction, } from "./reducers";
+import {Dispatch, AnyAction} from 'redux';
 
 
 
@@ -90,11 +90,11 @@ import {Dispatch} from 'redux';
 
 const App: React.FC = () => {
 
-  const dispatch: Dispatch<AppAction> = useDispatch();
+  const dispatch: Dispatch<AnyAction> = useDispatch();
   const articles = useSelector((state : AppState) => state.articles);
 
   useEffect(() => {
-    dispatch(fetchArticles({type: "ADD_ARTICLES"}));
+    dispatch(fetchArticles());
   }, [dispatch]);
 
   return (
