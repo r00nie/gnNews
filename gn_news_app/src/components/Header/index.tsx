@@ -28,10 +28,6 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleMenuItemClick = () => {
-    setIsMenuOpen(false);
-  };
-
   const handleOpen = () => {
     setOpen(true);
   };

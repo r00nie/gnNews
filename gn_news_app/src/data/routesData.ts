@@ -6,6 +6,23 @@ export type RouteData = {
   countryCode: string;
 };
 
+export const getCountryCode = (countryName: string): string => {
+  const countries: {[key: string]: string} = {
+    UnitedStates: "us",
+    Canada: "ca",
+    Mexico: "mx",
+    Brazil: "br",
+    UnitedKingdom: "gb",
+    Germany: "de",
+    France: "fr",
+    Italy: "it",
+    China: "cn",
+    Japan: "jp",
+    Poland: "pl",
+  };
+  return countries[countryName] || "";
+};
+
 export const routesData: RouteData[] = [
   {
     id: 0,

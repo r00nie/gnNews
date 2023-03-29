@@ -7,6 +7,7 @@ import {
   ListItemText,
   ListItemIcon,
 } from "@material-ui/core";
+import { useNavigate } from "react-router-dom";
 import { RouteData } from "../../data/routesData";
 import ReactCountryFlag from "react-country-flag";
 
@@ -41,6 +42,11 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, menuItems }) => {
   const classes = useStyles();
+  const navigate = useNavigate();
+
+  const handleButtonClick = (route: string) => {
+    navigate(route);
+  };
 
   return (
     <Drawer
@@ -53,7 +59,11 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, menuItems }) => {
       <div className={classes.toolbar} />
       <List>
         {menuItems.map((item, index) => (
-          <ListItem button key={index}>
+          <ListItem
+            button
+            onClick={(): void => handleButtonClick(item.route)}
+            key={index}
+          >
             <ListItemIcon>
               <ReactCountryFlag
                 countryCode={item.countryCode}
