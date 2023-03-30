@@ -7,21 +7,17 @@ import {
   Menu,
 } from "@material-ui/icons";
 import { ToggleButton, ToggleButtonGroup } from "@material-ui/lab";
-import HeaderDialog from "../HeaderDialog";
+import HeaderDialog from "./HeaderDialog";
 import { useDispatch, useSelector } from "react-redux";
-import { AppState } from "../../reducers";
+import { AppState, HeaderProps } from "../../types/globalTypes";
 import { toggleList } from "../../actions";
-import Sidebar from "../Sidebar";
+import { Sidebar } from "../Sidebar";
 import { routesData } from "../../data/routesData";
-
-interface HeaderProps {
-  title: string;
-}
 
 const Header: React.FC<HeaderProps> = ({ title }) => {
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
-  const isList = useSelector((state: AppState) => state.toggleList);
+  const isList = useSelector((state: AppState) => state.listVisibility);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleSidebarToggle = () => {
