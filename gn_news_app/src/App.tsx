@@ -4,6 +4,8 @@ import Articles from './components/Articles';
 import { useDispatch, useSelector } from "react-redux";
 import { fetchArticles, AppState, AppAction, } from "./reducers";
 import {Dispatch, AnyAction} from 'redux';
+import Footer from './components/Footer';
+
 
 
 
@@ -101,6 +103,7 @@ const App: React.FC = () => {
     <div className="App">
       <Header title="GN News" />
       <Articles articles={articles} />
+      <Footer/>
     </div>
   );
 };
