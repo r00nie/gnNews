@@ -1,15 +1,20 @@
-export const TOGGLE_LIST = 'TOGGLE_LIST';
+import {
+  AppAction,
+  Article,
+  TOGGLE_LIST,
+  ADD_ARTICLES,
+} from "../types/globalTypes";
 
-interface ToggleListAction {
-  type: typeof TOGGLE_LIST;
-  payload: boolean;
-}
-
-export type AppAction = ToggleListAction;
-
-export function toggleList(isList: boolean): ToggleListAction {
+export function toggleList(isList: boolean): AppAction {
   return {
     type: TOGGLE_LIST,
     payload: isList,
+  };
+}
+
+export function addArticles(articles: Article[]): AppAction {
+  return {
+    type: ADD_ARTICLES,
+    payload: articles,
   };
 }

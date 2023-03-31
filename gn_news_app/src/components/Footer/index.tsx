@@ -1,28 +1,26 @@
 import React from "react";
-import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import { Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import { Typography, Box } from "@material-ui/core";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-        position: "absolute",
-        bottom: 0,
-        width: "100%",
-        height: "50px",
-        backgroundColor: theme.palette.primary.main,
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      },
-    time: {
-      marginLeft: theme.spacing(1),
-    },
-  })
-);
+const useStyles = makeStyles((theme) => ({
+  root: {
+    position: "absolute",
+    bottom: 0,
+    width: "100%",
+    height: 50,
+    backgroundColor: theme.palette.primary.main,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  time: {
+    marginLeft: theme.spacing(1),
+  },
+}));
 
-const Footer: React.FC = () => {
+const Footer = () => {
   const classes = useStyles();
-  const [currentTime, setCurrentTime] = React.useState<Date>(new Date());
+  const [currentTime, setCurrentTime] = React.useState(new Date());
 
   React.useEffect(() => {
     const intervalId = setInterval(() => {
@@ -33,14 +31,14 @@ const Footer: React.FC = () => {
   }, []);
 
   return (
-    <footer className={classes.root}>
+    <Box component="footer" className={classes.root}>
       <Typography variant="body1">
         Current Time:
-        <span className={classes.time}>
+        <Box component="span" className={classes.time}>
           {currentTime.toLocaleTimeString()}
-        </span>
+        </Box>
       </Typography>
-    </footer>
+    </Box>
   );
 };
 
