@@ -13,50 +13,7 @@ import { AppState, HeaderProps } from "../../types/globalTypes";
 import { toggleList } from "../../actions";
 import { Sidebar } from "../Sidebar";
 import { routesData } from "../../data/routesData";
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles((theme) => ({
-  appBar: {
-    backgroundColor: theme.palette.primary.main,
-    boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.25)",
-    width: "100%",
-    height: "75px",
-  },
-  toolbar: {
-    height: "100%",
-    display: "flex",
-    flexShrink: 0,
-    alignItems: "center",
-    justifyContent: "space-between",
-    backgroundColor: theme.palette.primary.main,
-  },
-  title: {
-    textDecoration: "none",
-    color: "inherit",
-    "&:hover": {
-      textDecoration: "none",
-    },
-    fontFamily: theme.typography.fontFamily,
-    fontWeight: "bold",
-    fontSize: "25px",
-    marginLeft: "25px",
-  },
-  toggleButtonGroup: {
-    marginLeft: "auto",
-    backgroundColor: "white",
-  },
-  menuIconButton: {
-    backgroundColor: "white",
-    borderRadius: "50%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.25)",
-  },
-  menuIcon: {
-    fontSize: "20px",
-  },
-}));
+import { useStyles } from "./Header.styles";
 
 const Header: React.FC<HeaderProps> = ({ title }) => {
   const [open, setOpen] = useState(false);

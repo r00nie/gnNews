@@ -1,33 +1,8 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Box } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import { AppState } from "../../types/globalTypes";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    position: "static",
-    bottom: 0,
-    width: "100%",
-    height: 100,
-    backgroundColor: theme.palette.primary.main,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "column",
-  },
-  time: {
-    marginLeft: theme.spacing(1),
-    fontFamily: theme.typography.fontFamily,
-    color: "white",
-    fontWeight: "bold",
-    fontSize: "20px",
-  },
-  text: {
-    fontWeight: "bold",
-    margin: theme.spacing(1),
-  },
-}));
+import { useStyles } from "./Footer.styles";
 
 const Footer = () => {
   const classes = useStyles();

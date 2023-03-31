@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Article } from "../../../../types/globalTypes";
-import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import { useStyles } from "./NewListItem.styles";
 import {
   ListItem,
   ListItemText,
@@ -20,19 +20,6 @@ type Props = {
   article: Article;
   key: string;
 };
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      padding: "1rem",
-      margin: "10px 10px",
-      borderRadius: "0.5rem",
-      backgroundColor: "#f7f7f7",
-      border: "1px solid #e0e0e0",
-      boxSizing: "border-box",
-    },
-  })
-);
 
 const NewsListItem: React.FC<Props> = ({ article }) => {
   const classes = useStyles();

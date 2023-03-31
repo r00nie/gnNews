@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import {
   Drawer,
   List,
@@ -10,38 +9,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { RouteData } from "../../data/routesData";
 import ReactCountryFlag from "react-country-flag";
-
-const drawerWidth = 240;
-
-const useStyles = makeStyles((theme) => ({
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-    backgroundColor: "white",
-  },
-  toolbar: theme.mixins.toolbar,
-  listItem: {
-    margin: theme.spacing(1, 0),
-    padding: theme.spacing(2),
-    color: theme.palette.common.black,
-    "&:hover": {
-      backgroundColor: theme.palette.grey[500],
-    },
-    "&.active": {
-      backgroundColor: theme.palette.primary.main,
-      fontWeight: theme.typography.fontWeightBold,
-    },
-  },
-  listItemIcon: {
-    marginRight: 0,
-  },
-  listItemText: {
-    marginLeft: theme.spacing(1),
-  },
-}));
+import { useStyles } from "./Sidebar.styles";
 
 interface SidebarProps {
   isOpen: boolean;
