@@ -4,7 +4,7 @@ import { Typography, Box } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    position: "absolute",
+    position: "fixed",
     bottom: 0,
     width: "100%",
     height: 50,
@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
   time: {
     marginLeft: theme.spacing(1),
+    fontFamily: theme.typography.fontFamily,
   },
 }));
 
