@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import {
   Drawer,
   List,
@@ -10,29 +9,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { RouteData } from "../../data/routesData";
 import ReactCountryFlag from "react-country-flag";
-
-const drawerWidth = 240;
-
-const useStyles = makeStyles((theme) => ({
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  toolbar: theme.mixins.toolbar,
-  listItemText: {
-    marginLeft: theme.spacing(1),
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-  },
-  container: {
-    display: "flex",
-  },
-}));
+import { useStyles } from "./Sidebar.styles";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -63,8 +40,9 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, menuItems }) => {
             button
             onClick={(): void => handleButtonClick(item.route)}
             key={index}
+            className={classes.listItem}
           >
-            <ListItemIcon>
+            <ListItemIcon className={classes.listItemIcon}>
               <ReactCountryFlag
                 countryCode={item.countryCode}
                 svg
@@ -72,7 +50,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, menuItems }) => {
                 title={item.country}
               />
             </ListItemIcon>
-            <ListItemText primary={item.country} />
+            <ListItemText
+              primary={item.country}
+              className={classes.listItemText}
+            />
           </ListItem>
         ))}
       </List>

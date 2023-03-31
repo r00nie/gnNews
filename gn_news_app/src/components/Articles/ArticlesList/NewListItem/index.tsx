@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Article } from "../../../../types/globalTypes";
-import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import { useStyles } from "./NewListItem.styles";
 import {
   ListItem,
   ListItemText,
@@ -20,15 +20,6 @@ type Props = {
   article: Article;
   key: string;
 };
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      backgroundColor: theme.palette.background.paper,
-      marginBottom: theme.spacing(1),
-    },
-  })
-);
 
 const NewsListItem: React.FC<Props> = ({ article }) => {
   const classes = useStyles();

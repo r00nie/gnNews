@@ -1,26 +1,14 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Box } from "@material-ui/core";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    position: "absolute",
-    bottom: 0,
-    width: "100%",
-    height: 50,
-    backgroundColor: theme.palette.primary.main,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  time: {
-    marginLeft: theme.spacing(1),
-  },
-}));
+import { useSelector } from "react-redux";
+import { AppState } from "../../types/globalTypes";
+import { useStyles } from "./Footer.styles";
 
 const Footer = () => {
   const classes = useStyles();
   const [currentTime, setCurrentTime] = React.useState(new Date());
+  const articles = useSelector((state: AppState) => state.articles);
+  const articlesNumber = articles.length;
 
   React.useEffect(() => {
     const intervalId = setInterval(() => {
@@ -32,7 +20,13 @@ const Footer = () => {
 
   return (
     <Box component="footer" className={classes.root}>
-      <Typography variant="body1">
+      <Typography variant="body1" className={classes.text}>
+        Current number of articles:
+        <Box component="span" className={classes.time}>
+          {articlesNumber}
+        </Box>
+      </Typography>
+      <Typography variant="body1" className={classes.text}>
         Current Time:
         <Box component="span" className={classes.time}>
           {currentTime.toLocaleTimeString()}

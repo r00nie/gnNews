@@ -7,7 +7,7 @@ export type RouteData = {
 };
 
 export const getCountryCode = (countryName: string): string => {
-  const countries: {[key: string]: string} = {
+  const countries: { [key: string]: string } = {
     UnitedStates: "us",
     Canada: "ca",
     Mexico: "mx",
@@ -27,71 +27,61 @@ export const routesData: RouteData[] = [
   {
     id: 0,
     country: "United States",
-    value: "",
     route: "country/UnitedStates",
-    countryCode: 'us',
+    countryCode: "us",
   },
   {
     id: 1,
     country: "Canada",
-    value: "",
     route: "country/Canada",
-    countryCode: 'ca',
+    countryCode: "ca",
   },
   {
     id: 2,
     country: "Mexico",
-    value: "",
     route: "country/Mexico",
-    countryCode: 'mx',
+    countryCode: "mx",
   },
   {
     id: 3,
     country: "Brazil",
-    value: "",
     route: "country/Brazil",
-    countryCode: 'br',
+    countryCode: "br",
   },
   {
     id: 4,
     country: "United Kingdom",
-    value: "",
     route: "country/UnitedKingdom",
-    countryCode: 'gb',
+    countryCode: "gb",
   },
   {
     id: 5,
     country: "Germany",
-    value: "",
     route: "country/Germany",
-    countryCode: 'de',
+    countryCode: "de",
   },
   {
     id: 6,
     country: "France",
-    value: "",
     route: "country/France",
-    countryCode: 'fr',
+    countryCode: "fr",
   },
   {
     id: 7,
     country: "Italy",
-    value: "",
     route: "country/Italy",
-    countryCode: 'it',
+    countryCode: "it",
   },
   {
     id: 8,
     country: "China",
-    value: "",
     route: "country/China",
-    countryCode: 'cn',
+    countryCode: "cn",
   },
   {
     id: 9,
     country: "Japan",
-    value: "",
     route: "country/Japan",
-    countryCode: 'jp',
+    countryCode: "jp",
   },
 ];

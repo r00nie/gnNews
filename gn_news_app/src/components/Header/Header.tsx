@@ -13,12 +13,14 @@ import { AppState, HeaderProps } from "../../types/globalTypes";
 import { toggleList } from "../../actions";
 import { Sidebar } from "../Sidebar";
 import { routesData } from "../../data/routesData";
+import { useStyles } from "./Header.styles";
 
 const Header: React.FC<HeaderProps> = ({ title }) => {
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
   const isList = useSelector((state: AppState) => state.listVisibility);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const classes = useStyles();
 
   const handleSidebarToggle = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -44,21 +46,24 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
   };
 
   return (
-    <AppBar position="static">
-      <Toolbar style={{ display: "flex", justifyContent: "space-between" }}>
+    <AppBar position="static" className={classes.appBar}>
+      <Toolbar className={classes.toolbar}>
         <Sidebar
           isOpen={isMenuOpen}
           onClose={handleSidebarToggle}
           menuItems={routesData}
         />
-        <Button onClick={handleSidebarToggle}>
-          <Menu />
+        <Button
+          onClick={handleSidebarToggle}
+          className={classes.menuIconButton}
+        >
+          <Menu className={classes.menuIcon} />
         </Button>
         <Typography
           variant="h6"
           component={Link}
           href="/"
-          style={{ textDecoration: "none", color: "inherit" }}
+          className={classes.title}
         >
           {title}
         </Typography>
@@ -67,7 +72,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
           exclusive
           value={isList ? "list" : "module"}
           onChange={handleChange}
-          style={{ marginLeft: "auto", backgroundColor: "white" }}
+          className={classes.toggleButtonGroup}
         >
           <ToggleButton value="list" aria-label="list">
             <ViewListIcon />
