@@ -48,6 +48,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, menuItems }) => {
                 svg
                 style={{ fontSize: "2em" }}
                 title={item.country}
+                className={classes.flag}
               />
             </ListItemIcon>
             <ListItemText

@@ -38,6 +38,8 @@ export const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "center",
       alignItems: "center",
       boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.25)",
+      height: "40px",
+      width: "40px",
     },
     menuIcon: {
       fontSize: "20px",
