@@ -1,15 +1,14 @@
 import React, { useMemo, useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Dispatch } from "redux";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { AppState, AppAction } from "../types/globalTypes";
+import { AppState } from "../types/globalTypes";
 import { Articles } from "../components/Articles";
 import { getCountryCode } from "../data/routesData";
-import { addArticles } from "../actions";
+import { addArticles } from "../reducers";
 
 const CountryPage: React.FC = () => {
-  const dispatch: Dispatch<AppAction> = useDispatch();
+  const dispatch = useDispatch();
   const articles = useSelector((state: AppState) => state.articles);
   const { countryName } = useParams<{ countryName: string }>();
 
