@@ -15,7 +15,7 @@ const globalTheme = createTheme({
       main: "#3d5afe",
     },
     secondary: {
-      main: "#fe973d",
+      main: "#0a2ffe",
     },
   },
   breakpoints: {
@@ -27,6 +27,7 @@ const globalTheme = createTheme({
       xl: 1920,
     },
   },
+  spacing: (factor) => `${factor * 8}px`,
 });
 
 export default globalTheme;

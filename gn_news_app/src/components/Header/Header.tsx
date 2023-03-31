@@ -43,9 +43,6 @@ const useStyles = makeStyles((theme) => ({
   toggleButtonGroup: {
     marginLeft: "auto",
     backgroundColor: "white",
-    [theme.breakpoints.down("sm")]: {
-      heigth: "50%",
-    },
   },
   menuIconButton: {
     backgroundColor: "white", // Set background color to white

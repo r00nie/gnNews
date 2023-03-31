@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       margin: theme.spacing(2),
       borderRadius: theme.spacing(2),
-      boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.1)",
+      boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.3)",
       transition: "transform 0.3s ease-in-out",
       "&:hover": {
         transform: "scale(1.05)",
@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "space-between",
     },
     title: {
-      fontSize: 24,
+      fontSize: 20,
       fontWeight: 500,
       marginBottom: theme.spacing(2),
       color: theme.palette.primary.main,
@@ -50,6 +50,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: 14,
       color: theme.palette.secondary.main,
       marginBottom: theme.spacing(1),
+      fontWeight: "bold",
     },
     description: {
       fontSize: 18,
