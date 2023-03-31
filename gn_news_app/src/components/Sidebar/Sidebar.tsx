@@ -20,17 +20,26 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
+    backgroundColor: "white",
   },
   toolbar: theme.mixins.toolbar,
+  listItem: {
+    margin: theme.spacing(1, 0),
+    padding: theme.spacing(2),
+    color: theme.palette.common.black,
+    "&:hover": {
+      backgroundColor: theme.palette.grey[500],
+    },
+    "&.active": {
+      backgroundColor: theme.palette.primary.main,
+      fontWeight: theme.typography.fontWeightBold,
+    },
+  },
+  listItemIcon: {
+    marginRight: 0,
+  },
   listItemText: {
     marginLeft: theme.spacing(1),
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-  },
-  container: {
-    display: "flex",
   },
 }));
 
@@ -63,8 +72,9 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, menuItems }) => {
             button
             onClick={(): void => handleButtonClick(item.route)}
             key={index}
+            className={classes.listItem}
           >
-            <ListItemIcon>
+            <ListItemIcon className={classes.listItemIcon}>
               <ReactCountryFlag
                 countryCode={item.countryCode}
                 svg
@@ -72,7 +82,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, menuItems }) => {
                 title={item.country}
               />
             </ListItemIcon>
-            <ListItemText primary={item.country} />
+            <ListItemText
+              primary={item.country}
+              className={classes.listItemText}
+            />
           </ListItem>
         ))}
       </List>
