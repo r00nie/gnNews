@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Dispatch } from "redux";
 import axios from "axios";
-import { AppState, AppAction } from "../types/globalTypes";
+import { AppState } from "../types/globalTypes";
 import { Articles } from "../components/Articles";
-import { addArticles } from "../actions";
+import { addArticles } from "../reducers";
 
 const HomePage: React.FC = () => {
-  const dispatch: Dispatch<AppAction> = useDispatch();
+  const dispatch = useDispatch();
   const articles = useSelector((state: AppState) => state.articles);
 
   useEffect(() => {

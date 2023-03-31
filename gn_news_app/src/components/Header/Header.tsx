@@ -10,7 +10,7 @@ import { ToggleButton, ToggleButtonGroup } from "@material-ui/lab";
 import HeaderDialog from "./HeaderDialog";
 import { useDispatch, useSelector } from "react-redux";
 import { AppState, HeaderProps } from "../../types/globalTypes";
-import { toggleList } from "../../actions";
+import { toggleList } from "../../reducers";
 import { Sidebar } from "../Sidebar";
 import { routesData } from "../../data/routesData";
 import { useStyles } from "./Header.styles";
@@ -39,9 +39,9 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
     value: string | null
   ) => {
     if (value === "list") {
-      dispatch(toggleList(true));
+      dispatch(toggleList());
     } else {
-      dispatch(toggleList(false));
+      dispatch(toggleList());
     }
   };
 
